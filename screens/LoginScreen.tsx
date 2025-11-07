@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
   View,
+  Text,
   TextInput,
   Button,
   StyleSheet,
@@ -48,22 +49,32 @@ export default function LoginScreen({ setUser }: LoginScreenProps) {
       >
         <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
           <Logo />
-          <TextInput
-            placeholder="Email"
-            value={email}
-            onChangeText={setEmail}
-            style={styles.input}
-            keyboardType="email-address"
-            autoCapitalize="none"
-          />
-          <TextInput
-            placeholder="Senha"
-            value={senha}
-            onChangeText={setSenha}
-            style={styles.input}
-            secureTextEntry
-            autoCapitalize="none"
-          />
+          <Text style={styles.title}>Login</Text>
+
+          {/* Email */}
+          <View style={styles.field}>
+            <Text style={styles.label}>Email</Text>
+            <TextInput
+              value={email}
+              onChangeText={setEmail}
+              style={styles.input}
+              keyboardType="email-address"
+              autoCapitalize="none"
+            />
+          </View>
+
+          {/* Senha */}
+          <View style={styles.field}>
+            <Text style={styles.label}>Senha</Text>
+            <TextInput
+              value={senha}
+              onChangeText={setSenha}
+              style={styles.input}
+              secureTextEntry
+              autoCapitalize="none"
+            />
+          </View>
+
           <Button
             title={loading ? 'Carregando...' : 'Entrar'}
             onPress={handleLogin}
@@ -79,17 +90,33 @@ export default function LoginScreen({ setUser }: LoginScreenProps) {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    justifyContent: 'center',
     padding: 20,
+    justifyContent: 'center',
+    alignItems: 'stretch',
     marginBottom: 75,
-    backgroundColor: '#f9f9f9'
+  },
+  title: {
+    fontSize: 22,
+    marginBottom: 25,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: '#000',
+  },
+  field: {
+    marginBottom: 18,
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginBottom: 6,
+    color: '#000',
   },
   input: {
     borderWidth: 1,
     borderColor: '#ccc',
     padding: 12,
-    marginBottom: 15,
     borderRadius: 8,
-    backgroundColor: '#fff'
-  }
+    backgroundColor: '#fff',
+    color: '#000',
+  },
 });
