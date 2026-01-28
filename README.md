@@ -77,7 +77,4 @@ Felipe Martineli Santos
 Este projeto é de uso livre para fins de estudo e demonstração de portfólio.
 
 
----
 
-Se quiser, posso adaptar esse README pra incluir **prints das telas do app**, ou um **badge de tecnologias** (React Native, Expo, Supabase, etc.) pra deixar mais visual e profissional.  
-Quer que eu monte essa versão com imagens e ícones também?
